@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using UnityEngine.Assertions;
 
 namespace UGF.Json.Runtime
 {
@@ -30,13 +29,10 @@ namespace UGF.Json.Runtime
         /// Setups the specified text to read and parameters for start position and length.
         /// </summary>
         /// <param name="text">The text to read.</param>
-        /// <param name="position">The start position in text. The position cannot be less than zero and more than length.</param>
-        /// <param name="length">The length for reading. The length cannot be less than zero and more than text length.</param>
+        /// <param name="position">The start position in text.</param>
+        /// <param name="length">The length for reading.</param>
         public void Setup(string text, int position, int length)
         {
-            Assert.IsTrue(position >= 0 && position < length, "The position cannot be less than zero and more than length.");
-            Assert.IsTrue(length >= 0 && length <= text.Length, "The length cannot be less than zero and more than text length.");
-            
             Reset();
 
             Text = text;
@@ -146,7 +142,7 @@ namespace UGF.Json.Runtime
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         public override string ToString()
         {
